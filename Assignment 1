@@ -4,19 +4,22 @@ Problem #1     Block System call :
     block system call for date command 
     that means you don't have to uninstall date command but if you run kernel must not accept 
     do the same Firefox as well
-Answer #1 -> pandding
+Answer #1 -> pending
 
 Problem #2 :  play with directory 
 
       create a directory without name from command line
       create a directory with name "-okgoogle"
-Answer 
-```
+Answer #1.a
+
+Answer #2.b 
+# when i direct create directory then give me below error 
 root@vishnu:/vv/Test# mkdir -okgoogle
 mkdir: invalid option -- 'o'
 Try 'mkdir --help' for more information.
+#so here my current directory is Test so try this below command so ../ go back and create "-okgoogle" in my same Test directory
 root@vishnu:/vv/Test# mkdir ../Test/-okgoogle
 root@vishnu:/vv/Test# ls
 -okgoogle
 root@vishnu:/vv/Test# 
-```
+
