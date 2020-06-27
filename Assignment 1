@@ -11,6 +11,13 @@ Problem #2 :  play with directory
       create a directory without name from command line
       create a directory with name "-okgoogle"
 Answer #1.a
+root@vishnu:/vv/Test# mkdir -
+root@vishnu:/vv/Test# ls -l
+total 4
+drwxr-xr-x 2 root root 4096 Qas 27 23:58 -
+
+ 
+
 
 Answer #2.b 
 # when i direct create directory then give me below error 
@@ -18,8 +25,13 @@ root@vishnu:/vv/Test# mkdir -okgoogle
 mkdir: invalid option -- 'o'
 Try 'mkdir --help' for more information.
 #so here my current directory is Test so try this below command so ../ go back and create "-okgoogle" in my same Test directory
+
 root@vishnu:/vv/Test# mkdir ../Test/-okgoogle
-root@vishnu:/vv/Test# ls
--okgoogle
+root@vishnu:/vv/Test# ls -l
+total 8
+drwxr-xr-x 2 root root 4096 Qas 27 23:58 -
+drwxr-xr-x 2 root root 4096 Qas 28 00:00 -okgoogle
 root@vishnu:/vv/Test# 
+
+
 
