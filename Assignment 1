@@ -4,7 +4,24 @@ Problem #1     Block System call :
     block system call for date command 
     that means you don't have to uninstall date command but if you run kernel must not accept 
     do the same Firefox as well
-Answer #1 -> pending
+Answer #1 -> 
+root@vishnu:~# which date
+/usr/bin/date
+root@vishnu:~# chmod 000 /usr/bin/date
+root@vishnu:~# ls -l /usr/bin/date
+---------- 1 root root 109408 Leq  7  2019 /usr/bin/date
+root@vishnu:~# date
+bash: /usr/bin/date: Permission denied
+root@vishnu:~#
+
+root@vishnu:~# which firefox
+/usr/bin/firefox
+root@vishnu:~# chmod 000 /usr/bin/firefox
+root@vishnu:~# firefox
+bash: /usr/bin/firefox: Permission denied
+root@vishnu:~# 
+
+
 
 Problem #2 :  play with directory 
 
