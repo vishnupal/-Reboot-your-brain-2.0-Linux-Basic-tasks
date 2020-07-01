@@ -50,5 +50,21 @@ drwxr-xr-x 2 root root 4096 Qas 27 23:58 -
 drwxr-xr-x 2 root root 4096 Qas 28 00:00 -okgoogle
 root@vishnu:/vv/Test# 
 
+5
+     create  3 files named   abc.txt  ok  fine  g.txt  /tmp directory 
+      create  4  directories   aa aaa aaaa  under  /tmp directory 
+      give ls command to  list the content of  /tmp directory 
+      make sure it will only list the content (file|directory)  having 2 char in their name.
+
+root@vishnu:~# cd /tmp/ ;touch abc.txt ok fine g.txt
+root@vishnu:/tmp# mkdir aa aaa aaaa
+root@vishnu:/tmp# ls |awk '{print substr($0,1,2)}'
+aa
+aa
+aa
+ab
+fi
+g.
+ok
 
 
