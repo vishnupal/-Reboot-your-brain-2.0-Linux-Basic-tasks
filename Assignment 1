@@ -115,5 +115,19 @@ ok
 
 for learning more about wildcards plz visit `https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm` 
 
+Problem 6:
+here i use nohup command it is save the output in the nohup.out file 
+
+root@vishnu:/vv/Test# nohup ls
+nohup: ignoring input and appending output to 'nohup.out'
+root@vishnu:/vv/Test# nohup date
+nohup: ignoring input and appending output to 'nohup.out'
+root@vishnu:/vv/Test# cat nohup.out 
+nohup.out
+Thu 02 Jul 2020 04:19:12 PM IST
+root@vishnu:/vv/Test# 
+
+
+
 
 
