@@ -50,6 +50,41 @@ drwxr-xr-x 2 root root 4096 Qas 27 23:58 -
 drwxr-xr-x 2 root root 4096 Qas 28 00:00 -okgoogle
 root@vishnu:/vv/Test# 
 
+Problem #3 create directory structure 
+Answer 3
+root@vishnu:/vv/Test# mkdir -p A/{B/{G/K/Reboot.txt,H/J},C/{I,J/L},D/{F,E/M}} ;ln -s /vv/Test/A/B/G/K/Reboot.txt /vv/Test/A/B/H/J ;ln -s /vv/Test/A/B/G/K/Reboot.txt /vv/Test/A/C/J/L;ln -s /vv/Test/A/B/G/K/Reboot.txt /vv/Test/A/D/E/M ;ln -s /vv/Test/A/B/H/J /vv/Test/A/C/I/ ; ln -s /vv/Test/A/C/J/L /vv/Test/A/D/F/
+root@vishnu:/vv/Test# tree A
+A
+├── B
+│   ├── G
+│   │   └── K
+│   │       └── Reboot.txt
+│   └── H
+│       └── J
+│           └── Reboot.txt -> /vv/Test/A/B/G/K/Reboot.txt
+├── C
+│   ├── I
+│   │   └── J -> /vv/Test/A/B/H/J
+│   └── J
+│       └── L
+│           └── Reboot.txt -> /vv/Test/A/B/G/K/Reboot.txt
+└── D
+    ├── E
+    │   └── M
+    │       └── Reboot.txt -> /vv/Test/A/B/G/K/Reboot.txt
+    └── F
+        └── L -> /vv/Test/A/C/J/L
+
+19 directories, 0 files
+root@vishnu:/vv/Test# 
+
+
+
+
+
+
+
+
 5
      create  3 files named   abc.txt  ok  fine  g.txt  /tmp directory 
       create  4  directories   aa aaa aaaa  under  /tmp directory 
