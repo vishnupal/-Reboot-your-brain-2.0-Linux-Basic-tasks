@@ -84,7 +84,7 @@ root@vishnu:/vv/Test#
 
 
 
-Prpblem 5:
+Problem 5:
 
      create  3 files named   abc.txt  ok  fine  g.txt  /tmp directory 
       create  4  directories   aa aaa aaaa  under  /tmp directory 
@@ -105,17 +105,19 @@ g.
 ok
 */
 
-Answer 5:
+#Answer 5:
+
 for list only that having 2 char in their name. so i use ls with Wildcards so "?" is represent a single char.
 root@vishnu:~# cd /tmp/ ;touch abc.txt ok fine g.txt
 root@vishnu:/tmp# mkdir aa aaa aaaa
-root@vishnu:/tmp# ls ??
-aa
-ok
+root@vishnu:/tmp# ls -dl ??
+drwxr-xr-x 2 root root 4096 Jul  2 16:26 aa
+-rw-r--r-- 1 root root    0 Jul  2 16:27 ok
 
 for learning more about wildcards plz visit `https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm` 
 
 Problem 6:
+
 here i use nohup command it is save the output in the nohup.out file 
 
 root@vishnu:/vv/Test# nohup ls
