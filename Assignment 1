@@ -111,6 +111,7 @@ root@vishnu:~# cd /tmp/ ;touch abc.txt ok fine g.txt
 root@vishnu:/tmp# mkdir aa aaa aaaa
 root@vishnu:/tmp# ls ??
 aa
+ok
 
 for learning more about wildcards plz visit `https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm` 
 
