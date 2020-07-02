@@ -84,13 +84,15 @@ root@vishnu:/vv/Test#
 
 
 
+Prpblem 5:
 
-5
      create  3 files named   abc.txt  ok  fine  g.txt  /tmp directory 
       create  4  directories   aa aaa aaaa  under  /tmp directory 
       give ls command to  list the content of  /tmp directory 
       make sure it will only list the content (file|directory)  having 2 char in their name.
 
+here i miss misinterpret question:
+/*
 root@vishnu:~# cd /tmp/ ;touch abc.txt ok fine g.txt
 root@vishnu:/tmp# mkdir aa aaa aaaa
 root@vishnu:/tmp# ls |awk '{print substr($0,1,2)}'
@@ -101,5 +103,16 @@ ab
 fi
 g.
 ok
+*/
+
+Answer 5:
+for list only that having 2 char in their name. so i use ls with Wildcards so "?" is represent a single char.
+root@vishnu:~# cd /tmp/ ;touch abc.txt ok fine g.txt
+root@vishnu:/tmp# mkdir aa aaa aaaa
+root@vishnu:/tmp# ls ??
+aa
+
+for learning more about wildcards plz visit `https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm` 
+
 
 
