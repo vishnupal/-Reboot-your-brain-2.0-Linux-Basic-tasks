@@ -129,6 +129,115 @@ nohup.out
 Thu 02 Jul 2020 04:19:12 PM IST
 root@vishnu:/vv/Test# 
 
+problem #7 :    create a shell script 
+
+     create a shell script named /root/delvex.sh 
+     make sure it will run /bin/sh shell 
+     a user will be running this script my using a command name opensource
+     when a user  run like  "opensource  time" it must give current time only
+     when it runs like "opensource user"  it will give list of interactive shell users only
+     when run like "opensource 100"  it must print "Hello Delvex" 100 times in interval of 1 sec
+     if runs like  "opensource windows"  then it must shutdown OS
+     if run opensource command without any parameter  then it must show out --
+
+             i)   name of kernel 
+             ii)   version of kernel 
+             iii)  current date in the format of  /DD/MM/YY
+             iv)  name of OS 
+             v)   last reboot time 
+ 
+ Note:    each output for last option must be in a separate line   
+
+
+Answer 7:
+root@vishnu:~# opensource -h  
+                                                     
+  ___  _ __   ___ _ __  ___  ___  _   _ _ __ ___ ___ 
+ / _ \| '_ \ / _ \ '_ \/ __|/ _ \| | | | '__/ __/ _ \
+| (_) | |_) |  __/ | | \__ \ (_) | |_| | | | (_|  __/
+ \___/| .__/ \___|_| |_|___/\___/ \__,_|_|  \___\___|
+      |_|                                            
+----------------------------------
+Usage: opensource [OPTION] 
+ALL the option for opensource command 
+time            curent time
+100             print Hello delvex 100 times in interval of 1 sec.
+windows         shutdown os 
+----------------------------------
+root@vishnu:~# opensource 10  -> here i use 10 for demo 
+Hello Delvex
+Hello Delvex
+Hello Delvex
+Hello Delvex
+Hello Delvex
+Hello Delvex
+Hello Delvex
+Hello Delvex
+Hello Delvex
+Hello Delvex
+root@vishnu:~# opensource time
+current time : 21:36:07
+root@vishnu:~# opensource 
+Name of kernel : Linux
+Version of kernel : 5.4.0-kali2-amd64
+Current date : 07/07/20
+Name of OS  : GNU/Linux
+Last reboot time : Tue Jul 7 20:33
+root@vishnu:~# opensource -h 4
+Plz enter valid input 
+root@vishnu:~# opensource 454
+Plz enter vaild option
+root@vishnu:~# 
+root@vishnu:~# cat /usr/bin/opensource 
+#!/bin/sh
+
+if [ $# -gt 1 ];
+then
+
+echo "Plz enter valid input "
+exit 1
+fi
+if [ "$1" = "-h" ];then
+figlet opensource
+echo "----------------------------------"
+echo "Usage: opensource [OPTION] "
+echo "ALL the option for opensource command "
+echo "time            curent time"
+echo "100             print Hello delvex 100 times in interval of 1 sec."
+echo "windows         shutdown os "
+echo "----------------------------------"
+fi
+/root/delvex.sh $1
+root@vishnu:~# cat delvex.sh 
+#!/bin/sh
+
+if [ $# -eq 0 ];
+then
+echo "Name of kernel : $(uname)"
+echo "Version of kernel : $(uname -r)"
+echo "Current date : `date +%d`/`date +%m`/`date +%y`"
+echo "Name of OS  : $(uname -o)"
+echo "Last reboot time : `last reboot | awk -F " " 'NR==1{print $5,$6,$7, $8 }'`"
+fi
+if [ $1 = "time" ];then
+        echo "current time : $(date +%T)"
+        fi
+
+if [ $1 = 10 ];then 
+x=1
+while [ $x -le 10 ]
+do
+echo "Hello Delvex"
+sleep 1
+ x=$(( $x + 1 ))
+done
+fi
+
+if [ $1 = "windows" ];then
+shutdown now
+else
+echo "Plz enter vaild option"
+fi
 
 
 
